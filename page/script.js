@@ -158,9 +158,9 @@ async function predictWebcam() {
                 setTimeout(() => {
                     timeoutActive = false
 
-                    if ((enemyEasySpawn && label == "thumbsUp") || (enemyDifficultSpawn && label == "openHand")) {
+                    if ((enemyEasySpawn && label == "thumbsUp") || (enemyDifficultSpawn && label == "openHand") || (label == "dinoHand")) {
                         console.log('yay');
-                        alert('You managed to calm the dinosaur down! well done:)')
+                        alert('You managed to calm the dinosaur down or to stay hidden! well done:)')
                         currentEnemyUrl = false;
                         getRandomEnemy()
                     } else {

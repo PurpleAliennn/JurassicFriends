@@ -8,6 +8,7 @@ let enableWebcamButton;
 let webcamRunning = false;
 let handTrainButton = false;
 let openHandButton = false;
+let dinoHandButton = false;
 let classifyButton = false;
 let trainingsData = [];
 
@@ -17,6 +18,10 @@ document.getElementById("handTrainButton").addEventListener("click", () => {
 
 document.getElementById("openHandButton").addEventListener("click", () => {
     openHandButton = true
+})
+
+document.getElementById("dinoHandButton").addEventListener("click", () => {
+    dinoHandButton = true
 })
 
 document.getElementById("learnButton").addEventListener("click", () => {
@@ -187,6 +192,12 @@ async function predictWebcam() {
                 trainingsData.push(flattenAndLabelData(landmarks, "openHand"));
                 console.log(trainingsData);
                 openHandButton = false;
+            }
+
+            if(dinoHandButton){
+                trainingsData.push(flattenAndLabelData(landmarks, "dinoHand"));
+                console.log(trainingsData);
+                dinoHandButton = false;
             }
 
             if(classifyButton){

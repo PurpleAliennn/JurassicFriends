@@ -12,11 +12,6 @@ let enemyDifficultSpawn = false;
 let currentEnemyUrl = false
 let timeoutActive = false
 
-
-// document.getElementById("classifyButton").addEventListener("click", () => {
-//     classifyButton = true
-// })
-
 async function loadData(){
     fetch('./data.json')
         .then(response => {
@@ -110,7 +105,6 @@ getRandomEnemy()
 
 let lastVideoTime = -1;
 let results = undefined;
-// console.log(video);
 
 async function predictWebcam() {
     canvasElement.style.width = video.videoWidth;
@@ -129,21 +123,17 @@ async function predictWebcam() {
         results = handLandmarker.detectForVideo(video, startTimeMs);
     }
     canvasCtx.save();
-    //canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
     const backgroundImage = new Image()
     backgroundImage.src = './backgroundImage.png'
     canvasCtx.drawImage(backgroundImage,0,0,canvasElement.width, canvasElement.height)
 
-    // canvasCtx.fillStyle = "white"
-    // canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
-
     if (currentEnemyUrl) {
 
-        // console.log(currentEnemyUrl);
+
         const image = new Image()
         image.src = currentEnemyUrl
-        canvasCtx.drawImage(image,250,220,300, 200) // make the size of the enemy
+        canvasCtx.drawImage(image,250,220,300, 200)
     } else {
         getRandomEnemy()
     }
@@ -156,24 +146,11 @@ async function predictWebcam() {
                 dataLoaded = true
             }
 
-
-            
-
-            // if (the enemy dies then) {
-            //     currentEnemyUrl = false
-            // }
-
             if(classifyButton){
-                // console.log(flattenArray(landmarks));
                 classifyButton = false;
-                // console.log(machine.classify(flattenArray( landmarks)));
-            }
-
-            // spawn enemey
-                // als easyEnemy --> 
+            } 
 
             let label = machine.classify(flattenArray( landmarks))
-            
 
             if (!timeoutActive) {
                 timeoutActive = true

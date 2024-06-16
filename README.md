@@ -1,3 +1,4 @@
+# Jurassic Friends
 Welcome to the repository for Jurassic friends.
 Jurassic friends is a simple game which uses MediaPipe hand detection to see what hand pose you are showing the camera.
 

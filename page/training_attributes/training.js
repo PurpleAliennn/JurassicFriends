@@ -16,12 +16,10 @@ export function flattenAndLabelData(arr, label) {
 }
 
 export function flattenArray(arr) {
-    // Initialize an empty array to hold the flattened values
+
     let flattened = [];
     
-    // Loop through each object in the input array
     arr.forEach(obj => {
-        // For each object, push its values into the flattened array
         flattened.push(obj.x, obj.y, obj.z);
     });
     

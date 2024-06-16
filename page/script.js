@@ -155,6 +155,7 @@ async function predictWebcam() {
             if (!timeoutActive) {
                 timeoutActive = true
                 console.log('start timer...');
+                console.log(label)
                 setTimeout(() => {
                     timeoutActive = false
 
@@ -168,7 +169,7 @@ async function predictWebcam() {
                         alert('You made the wrong hand gesture :( it startled the dinosaur')
                     }
 
-                }, 5000);
+                }, 3000);
             }
 
 

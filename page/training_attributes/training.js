@@ -3,7 +3,7 @@ import kNear from "./knear.js"
 const k = 3
  export const machine = new kNear(k);
 
-//machine.learn([18, 9.2, 8.1, 2], 'cat')
+
 
 export function flattenAndLabelData(arr, label) {
     let flattened = [];
